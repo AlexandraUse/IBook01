@@ -6,7 +6,7 @@ public class Main extends Sprite {
 
     public function Main()
     {
-        trace('test 2');
+        trace('test 3');
     }
 }
 }
