@@ -29,6 +29,8 @@ public class Main extends Sprite {
         app.setSize(800, 600);
         addChild(app);
 
+        trace('test');
+
         stage.addEventListener(Event.RESIZE, resizeHandler);
     }
 
