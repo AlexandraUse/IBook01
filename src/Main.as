@@ -7,36 +7,32 @@ import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
+import flash.geom.Rectangle;
+
+import starling.core.Starling;
 
 [SWF(frameRate=60)]
 public class Main extends Sprite {
 
-    private var app:Application;
+    private var starling:Starling;
 
     public function Main()
     {
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
 
-        stage.nativeWindow.visible = true;
-        stage.nativeWindow.width = 800;
-        stage.nativeWindow.height = 600;
-        stage.nativeWindow.x = (Screen.mainScreen.bounds.width - 800) * .5;
-        stage.nativeWindow.y = (Screen.mainScreen.bounds.height - 600) * .5;
-        stage.nativeWindow.title = "Magazine";
-
-        app = new Application();
-        app.setSize(800, 600);
-        addChild(app);
-
-        trace('test');
+        starling = new Starling(Application, stage);
+        starling.start();
 
         stage.addEventListener(Event.RESIZE, resizeHandler);
     }
 
     private function resizeHandler(event:Event):void
     {
-        app.setSize(stage.stageWidth, stage.stageHeight);
+        var rect:Rectangle = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
+        starling.viewPort = rect;
+        starling.stage.stageWidth = stage.stageWidth;
+        starling.stage.stageHeight = stage.stageHeight;
     }
 }
 }
