@@ -1,7 +1,7 @@
 package be.devine.cp3.iBook1
 {
 import be.devine.cp3.iBook1.model.AppModel;
-import be.devine.cp3.iBook1.vo.PageVo;
+import be.devine.cp3.iBook1.vo.PageVO;
 
 import flash.events.Event;
 
@@ -11,7 +11,7 @@ import starling.display.Sprite;
 public class Application extends Sprite
 {
     private var appModel:AppModel;
-    private var pages:Vector.<PageVo>;
+    private var pages:Vector.<PageVO>;
 
     public function Application()
     {
@@ -28,13 +28,15 @@ public class Application extends Sprite
 
     private function appModelCompleteHandler(event:flash.events.Event):void
     {
-        pages = new Vector.<PageVo>();
-        /*for each(var bmp:Bitmap in appModel.images) {
-            var img:PageVo = new PageVo(Texture.fromBitmap(bmp));
+        pages = new Vector.<PageVO>();
+        trace('MakePage');
+        /*for each(var page:PageVo in appModel.pages)
+        {
+            var text:PageVo = new PageVo(Texture.fromBitmap(bmp));
             img.scaleWhenDown = 1;
             img.addEventListener(starling.events.Event.TRIGGERED, imgTriggeredHandler);
             addChild(img);
-            images.push(img);
+            pages.push(img);
         }*/
         //display();
     }

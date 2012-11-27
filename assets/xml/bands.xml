@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <pages>
-    <page_01>
+    <page>
         <title x="" y="" color="">
             Wallace Vanborn
         </title>
@@ -17,8 +17,8 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_01>
-    <page_02>
+    </page>
+    <page>
         <title x="" y="" color="">
             Triggerfinger
         </title>
@@ -32,8 +32,8 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_02>
-    <page_03>
+    </page>
+    <page>
         <title x="" y="" color="">
             Selah Sue
         </title>
@@ -51,8 +51,8 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_03>
-    <page_04>
+    </page>
+    <page>
         <title x="" y="" color="">
             Muse
         </title>
@@ -69,8 +69,8 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_04>
-    <page_05>
+    </page>
+    <page>
         <title x="" y="" color="">Raketkanon</title>
         <text x="" y="" font-size="">
 
@@ -79,8 +79,8 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_05>
-    <page_06>
+    </page>
+    <page>
         <title x="" y="" color="">
             The Rolling Stones
         </title>
@@ -96,8 +96,8 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_06>
-    <page_07>
+    </page>
+    <page>
         <title x="" y="" color="">Block Party</title>
         <text x="" y="" font-size="">
             Bloc Party is een Londense post-punkgroep die onder de naam The Angel Range in 2002 werd opgericht. Bloc Party als naam wordt gebruikt sinds september 2003. De band ontstond door het ontmoeten van Russell 			Lissack en Kele Okereke op het Reading Festival. De twee konden het goed met elkaar vinden en later werden Gordon Moakes en Matt Tong aan de groep toegevoegd. Zo ontstond het uiteindelijke Bloc Party.
@@ -109,5 +109,5 @@
         <urlPage x="" y="" >read more</urlPage>
         <urlLink x="" y="" >visit</urlLink>
         <background-image x="" y="" width="" height=""></background-image>
-    </page_07>
+    </page>
 </pages>

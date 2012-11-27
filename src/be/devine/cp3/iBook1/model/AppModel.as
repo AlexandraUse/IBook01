@@ -1,13 +1,16 @@
 package be.devine.cp3.iBook1.model
 {
-import be.devine.cp3.iBook1.vo.PageVo;
+import be.devine.cp3.iBook1.vo.PageVO;
+import be.devine.cp3.iBook1.vo.PageVO;
 import be.devine.cp3.queue.Queue;
 import be.devine.cp3.queue.tasks.XMLParser;
 
 import flash.events.Event;
-import starling.events.EventDispatcher;
+import flash.events.EventDispatcher;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
 
-public class AppModel extends starling.events.EventDispatcher
+public class AppModel extends EventDispatcher
 {
     private static var instance:AppModel;
 
@@ -18,9 +21,16 @@ public class AppModel extends starling.events.EventDispatcher
         return instance;
     }
 
-    private var queue:Queue;
-    private var _pages:Vector.<PageVo>;
+    public static const PAGES_CHANGED:String = "pagesChanged";
+    public static const CURRENT_PAGE_CHANGED:String = "currentPageChanged";
+
+    private var _pages:Array;
+    private var _currentPage:PageVO;
+
+    private var currentPageChanged:Boolean;
     private var _currentPageIndex:int;
+
+
 
     public function AppModel(e:Enforcer)
     {
@@ -28,25 +38,36 @@ public class AppModel extends starling.events.EventDispatcher
         {
             throw new Error("AppModel is a Singleton");
         }
-        _pages = new Vector.<PageVo>();
     }
 
     public function load():void
     {
-        queue = new Queue();
-        queue.add(new XMLParser("assets/xml/bands.xml"));
-        queue.addEventListener(Event.COMPLETE, queueCompleteHandler);
-        queue.start();
+        var pagesXMLLoader:URLLoader = new URLLoader();
+        pagesXMLLoader.addEventListener(Event.COMPLETE, pagesXMLLoaderCompleteHandler);
+        pagesXMLLoader.load(new URLRequest("assets/xml/bands.xml"));
     }
 
-    private function queueCompleteHandler(event:Event):void
+    private function pagesXMLLoaderCompleteHandler(event:Event):void
     {
-        trace('APPMODEL: COmplete');
-        var deXML = queue.xmlData;
-        for each(var pagesNode:XML in deXML)
+        var pagesXML:XML = new XML(event.target.data);
+        var pages:Array = [];
+        for each(var page:Object in pagesXML.page)
         {
-            trace(pagesNode);
+            var pageVO:PageVO = new PageVO();
+            pageVO.title = page.title;
+            pageVO.path = page.url;
+            pageVO.text = page.text;
+            pages.push(pageVO);
         }
+        this.pages = pages;
+        this.currentPage = pages[0];
+
+    }
+
+    private function commitProperties():void
+    {
+
+        trace(currentPage.text);
     }
 
     public function goToNextPage():void
@@ -57,6 +78,34 @@ public class AppModel extends starling.events.EventDispatcher
     public function goToPrevPage():void
     {
 
+    }
+
+    public function get pages():Array
+    {
+        return _pages;
+    }
+    public function set pages(value:Array):void
+    {
+        if(value != _pages)
+        {
+            _pages = value;
+            dispatchEvent(new Event(PAGES_CHANGED));
+        }
+    }
+
+    public function get currentPage():PageVO
+    {
+        return _currentPage;
+    }
+    public function set currentPage(value:PageVO):void
+    {
+        if(_currentPage != value)
+        {
+            currentPageChanged = true;
+            _currentPage = value;
+            commitProperties();
+            dispatchEvent(new Event(CURRENT_PAGE_CHANGED));
+        }
     }
 }
 }
