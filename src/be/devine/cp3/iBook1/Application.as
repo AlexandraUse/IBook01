@@ -3,9 +3,10 @@ package be.devine.cp3.iBook1
 import be.devine.cp3.iBook1.model.AppModel;
 import be.devine.cp3.iBook1.vo.PageVo;
 
-import flash.display.Sprite;
 import flash.events.Event;
-import starling.core.Starling;
+
+import starling.display.Sprite;
+
 
 public class Application extends Sprite
 {

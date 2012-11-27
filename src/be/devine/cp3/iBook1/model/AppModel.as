@@ -5,9 +5,9 @@ import be.devine.cp3.queue.Queue;
 import be.devine.cp3.queue.tasks.XMLParser;
 
 import flash.events.Event;
-import flash.events.EventDispatcher;
+import starling.events.EventDispatcher;
 
-public class AppModel extends EventDispatcher
+public class AppModel extends starling.events.EventDispatcher
 {
     private static var instance:AppModel;
 
@@ -41,12 +41,12 @@ public class AppModel extends EventDispatcher
 
     private function queueCompleteHandler(event:Event):void
     {
-
-        trace('OK');
-        /*for each(var task:LoaderTask in queue.finishedTasks) {
-            _images.push(task.content as Bitmap);
+        trace('APPMODEL: COmplete');
+        var deXML = queue.xmlData;
+        for each(var pagesNode:XML in deXML)
+        {
+            trace(pagesNode);
         }
-        dispatchEvent(new Event(Event.COMPLETE));*/
     }
 
     public function goToNextPage():void

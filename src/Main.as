@@ -12,8 +12,8 @@ import flash.geom.Rectangle;
 import starling.core.Starling;
 
 [SWF(frameRate=60)]
-public class Main extends Sprite {
-
+public class Main extends Sprite
+{
     private var starling:Starling;
 
     public function Main()
@@ -23,8 +23,6 @@ public class Main extends Sprite {
 
         starling = new Starling(Application, stage);
         starling.start();
-
-        trace('ok');
 
         stage.addEventListener(Event.RESIZE, resizeHandler);
     }

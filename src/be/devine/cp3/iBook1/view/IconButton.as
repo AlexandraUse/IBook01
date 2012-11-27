@@ -1,9 +1,9 @@
 package be.devine.cp3.iBook1.view
 {
-import flash.display.DisplayObject;
-import flash.display.Sprite;
+import starling.display.DisplayObject;
+import starling.display.Sprite;
 
-public class IconButton extends Sprite
+/*public class IconButton extends starling.display.Sprite
 {
     protected var icon:DisplayObject;
 
@@ -36,5 +36,5 @@ public class IconButton extends Sprite
     {
 
     }
-}
+}*/
 }
