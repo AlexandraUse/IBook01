@@ -24,6 +24,8 @@ public class Main extends Sprite {
         starling = new Starling(Application, stage);
         starling.start();
 
+        trace('ok');
+
         stage.addEventListener(Event.RESIZE, resizeHandler);
     }
 
