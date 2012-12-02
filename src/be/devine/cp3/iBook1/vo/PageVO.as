@@ -4,6 +4,6 @@ public class PageVO
 {
     public var text:String;
     public var title:String;
-    public var path:String;
+    public var image:String;
 }
 }

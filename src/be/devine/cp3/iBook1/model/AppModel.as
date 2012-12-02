@@ -1,10 +1,6 @@
 package be.devine.cp3.iBook1.model
 {
 import be.devine.cp3.iBook1.vo.PageVO;
-import be.devine.cp3.iBook1.vo.PageVO;
-import be.devine.cp3.queue.Queue;
-import be.devine.cp3.queue.tasks.XMLParser;
-
 import flash.events.Event;
 import flash.events.EventDispatcher;
 import flash.net.URLLoader;
@@ -30,14 +26,14 @@ public class AppModel extends EventDispatcher
     private var currentPageChanged:Boolean;
     private var _currentPageIndex:int;
 
-
-
     public function AppModel(e:Enforcer)
     {
         if(e == null)
         {
             throw new Error("AppModel is a Singleton");
         }
+
+        load();
     }
 
     public function load():void
@@ -55,7 +51,7 @@ public class AppModel extends EventDispatcher
         {
             var pageVO:PageVO = new PageVO();
             pageVO.title = page.title;
-            pageVO.path = page.url;
+            pageVO.image = page.image;
             pageVO.text = page.text;
             pages.push(pageVO);
         }
@@ -66,8 +62,6 @@ public class AppModel extends EventDispatcher
 
     private function commitProperties():void
     {
-
-        trace(currentPage.text);
     }
 
     public function goToNextPage():void
@@ -97,6 +91,7 @@ public class AppModel extends EventDispatcher
     {
         return _currentPage;
     }
+
     public function set currentPage(value:PageVO):void
     {
         if(_currentPage != value)
