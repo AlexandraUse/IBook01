@@ -1,4 +1,4 @@
-package be.devine.cp3.queue.tasks
+package be.devine.cp3.iBook1.queue.tasks
 {
     import flash.events.Event;
     import flash.net.URLLoader;

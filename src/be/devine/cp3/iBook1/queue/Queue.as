@@ -1,7 +1,7 @@
-package be.devine.cp3.queue
+package be.devine.cp3.iBook1.queue
 {
-import be.devine.cp3.queue.tasks.IQueueTask;
-import be.devine.cp3.queue.tasks.XMLParser;
+import be.devine.cp3.iBook1.queue.tasks.IQueueTask;
+import be.devine.cp3.iBook1.queue.tasks.XMLParser;
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
