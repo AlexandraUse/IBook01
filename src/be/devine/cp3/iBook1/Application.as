@@ -1,7 +1,6 @@
 package be.devine.cp3.iBook1
 {
 import be.devine.cp3.iBook1.model.AppModel;
-import be.devine.cp3.iBook1.service.PageService;
 import be.devine.cp3.iBook1.view.ImageLoader;
 import be.devine.cp3.iBook1.view.TextLoader;
 
@@ -11,8 +10,6 @@ import starling.display.Sprite;
 public class Application extends starling.display.Sprite
 {
     private var appModel:AppModel;
-    private var pageService:PageService;
-
     private var selectedImage:ImageLoader;
     private var selectedText:TextLoader;
 
@@ -27,14 +24,6 @@ public class Application extends starling.display.Sprite
 
         selectedText = new TextLoader();
         addChild(selectedText);
-
-        pageService = new PageService();
-        pageService.addEventListener(Event.COMPLETE, pagesCompleteHandler);
-    }
-
-    private function pagesCompleteHandler(event:Event):void {
-        appModel.pages = pageService.pages;
-        appModel.currentPage = appModel.pages[0];
     }
 
     private function pagesChangedHandler(event:Event):void

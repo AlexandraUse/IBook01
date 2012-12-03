@@ -1,15 +1,20 @@
 package be.devine.cp3.iBook1.view
 {
-public class PrevButton extends IconButton
+import starling.display.Button;
+import starling.textures.Texture;
+import starling.display.Sprite;
+
+public class PrevButton extends Sprite
 {
+    [Embed(source="/../libs/previousButton.png")]
+    public static const PrevButtonImage:Class;
+
     public function PrevButton()
     {
-        super(40, 66);
-    }
-
-    override protected function createIcon():void
-    {
-        //icon = new Library.ArrowPreviousGif();
+        var prevButton = new Button(Texture.fromBitmap(new PrevButtonImage()));
+        addChild(prevButton);
+        prevButton.x = 20;
+        prevButton.y = 200;
     }
 }
 }

@@ -8,6 +8,9 @@ import starling.utils.VAlign;
 
 public class TextLoader extends starling.display.Sprite
 {
+    private var titleTextField:starling.text.TextField;
+    private var textTextField:starling.text.TextField;
+
     public function TextLoader()
     {
 
@@ -15,19 +18,22 @@ public class TextLoader extends starling.display.Sprite
 
     public function loadTitle(title:String)
     {
-        var starlingTextField:starling.text.TextField =
-                new starling.text.TextField(
-                        100, 20, title, "Arial", 12, Color.RED
-                );
-        //posities moeten nog gefixed worden!!
-        starlingTextField.hAlign = HAlign.RIGHT;
-        starlingTextField.vAlign = VAlign.BOTTOM;
-        addChild(starlingTextField);
+        if(titleTextField)
+        {
+            removeChild(titleTextField);
+        }
+        titleTextField = new starling.text.TextField(100, 20, title, "Arial", 12, Color.RED);
+        titleTextField.hAlign = HAlign.RIGHT;
+        titleTextField.vAlign = VAlign.BOTTOM;
+        addChild(titleTextField);
     }
 
     public function loadText(text:String)
     {
-
+        textTextField= new starling.text.TextField(300, 300, text, "Arial", 12, Color.RED);
+        //textTextField.hAlign = HAlign.RIGHT;
+        //textTextField.vAlign = VAlign.BOTTOM;
+        //addChild(textTextField);
     }
 }
 }

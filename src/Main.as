@@ -20,6 +20,8 @@ public class Main extends Sprite
     {
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
+        stage.nativeWindow.width = 800;
+        stage.nativeWindow.height = 600;
 
         starling = new Starling(Application, stage);
         starling.start();

@@ -33,7 +33,31 @@ public class AppModel extends EventDispatcher
             throw new Error("AppModel is a Singleton");
         }
 
-        _pages = [];
+        load();
+    }
+
+    public function load():void
+    {
+        var pagesXMLLoader:URLLoader = new URLLoader();
+        pagesXMLLoader.addEventListener(Event.COMPLETE, pagesXMLLoaderCompleteHandler);
+        pagesXMLLoader.load(new URLRequest("assets/xml/bands.xml"));
+    }
+
+    private function pagesXMLLoaderCompleteHandler(event:Event):void
+    {
+        var pagesXML:XML = new XML(event.target.data);
+        var pages:Array = [];
+        for each(var page:Object in pagesXML.page)
+        {
+            var pageVO:PageVO = new PageVO();
+            pageVO.title = page.title;
+            pageVO.image = page.image;
+            pageVO.text = page.text;
+            pages.push(pageVO);
+        }
+        this.pages = pages;
+        this.currentPage = pages[0];
+
     }
 
     private function commitProperties():void
