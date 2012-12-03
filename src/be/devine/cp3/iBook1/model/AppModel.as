@@ -32,7 +32,6 @@ public class AppModel extends EventDispatcher
         {
             throw new Error("AppModel is a Singleton");
         }
-
         load();
     }
 
@@ -66,12 +65,24 @@ public class AppModel extends EventDispatcher
 
     public function goToNextPage():void
     {
-
+        var index:int = _pages.indexOf(_currentPage);
+        if(index > -1)
+        {
+            index++;
+            if(index < _pages.length) currentPage = _pages[index];
+            else currentPage = _pages[0];
+        }
     }
 
     public function goToPrevPage():void
     {
-
+        var index:int = _pages.indexOf(_currentPage);
+        if(index > -1)
+        {
+            index--;
+            if(index > -1) currentPage = _pages[index];
+            else currentPage = _pages[_pages.length - 1];
+        }
     }
 
     public function get pages():Array

@@ -12,6 +12,7 @@ import starling.textures.Texture;
 public class ImageLoader extends starling.display.Sprite
 {
     private var ldr:Loader;
+    private var image:Image
 
     public function ImageLoader()
     {
@@ -26,8 +27,13 @@ public class ImageLoader extends starling.display.Sprite
 
     private function photoCompleteHandler(event:Event):void
     {
+        if(image)
+        {
+            removeChild(image);
+        }
+
         var texture:Texture = Texture.fromBitmap(ldr.content as Bitmap);
-        var image:Image = new Image(texture);
+        image = new Image(texture);
         addChild(image);
     }
 }

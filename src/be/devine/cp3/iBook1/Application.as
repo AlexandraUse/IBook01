@@ -2,6 +2,7 @@ package be.devine.cp3.iBook1
 {
 import be.devine.cp3.iBook1.model.AppModel;
 import be.devine.cp3.iBook1.view.ImageLoader;
+import be.devine.cp3.iBook1.view.PageSelector;
 import be.devine.cp3.iBook1.view.TextLoader;
 
 import flash.events.Event;
@@ -12,6 +13,7 @@ public class Application extends starling.display.Sprite
     private var appModel:AppModel;
     private var selectedImage:ImageLoader;
     private var selectedText:TextLoader;
+    private var pageSelector:PageSelector;
 
     public function Application()
     {
@@ -24,25 +26,35 @@ public class Application extends starling.display.Sprite
 
         selectedText = new TextLoader();
         addChild(selectedText);
+
+        pageSelector = new PageSelector();
+        addChild(pageSelector);
     }
 
     private function pagesChangedHandler(event:Event):void
     {
-        displayCurrentImage();
+        displayCurrentPage();
     }
 
     private function currentPageChangedHandler(event:Event):void
     {
-        displayCurrentImage();
+        displayCurrentPage();
     }
 
-    private function displayCurrentImage():void
+    private function displayCurrentPage():void
     {
         if(appModel.currentPage)
         {
-            //De data van de pagina inladen
-            selectedImage.load(appModel.currentPage.image);
-            selectedText.loadTitle(appModel.currentPage.title);
+            if(appModel.currentPage.text && appModel.currentPage.image && appModel.currentPage.title )
+            {
+                selectedImage.load(appModel.currentPage.image);
+                selectedText.loadTitle(appModel.currentPage.title);
+                selectedText.loadText(appModel.currentPage.text);
+            }
+            else
+            {
+                trace('LEGE SPOT IN XML')
+            }
         }
     }
 }
