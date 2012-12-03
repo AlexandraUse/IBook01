@@ -5,7 +5,10 @@
       <configuration name="IBook01" target-platform="Desktop" pure-as="true" main-class="Main" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/IBook01">
         <dependencies target-player="11.1">
           <entries>
-            <entry library-id="cd29e098-7773-4673-869a-4b5d7477bace">
+            <entry library-id="5e66c263-c2cf-4c58-ad21-759a21c04d33">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="fa7e6db7-6486-491e-af20-048b5abd435e">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -28,19 +31,30 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library type="flex">
-        <properties id="cd29e098-7773-4673-869a-4b5d7477bace" />
+        <properties id="5e66c263-c2cf-4c58-ad21-759a21c04d33" />
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../../../../starling/starling/bin" />
+          <root url="file://$MODULE_DIR$/../../starling/starling/bin" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../../../../starling/samples/demo/src" />
-          <root url="file://$MODULE_DIR$/../../../../../../starling/samples/demo_mobile/src" />
-          <root url="file://$MODULE_DIR$/../../../../../../starling/samples/scaffold_mobile/src" />
-          <root url="file://$MODULE_DIR$/../../../../../../starling/starling/src" />
-          <root url="file://$MODULE_DIR$/../../../../../../starling/tests/src" />
+          <root url="file://$MODULE_DIR$/../../starling/samples/demo/src" />
+          <root url="file://$MODULE_DIR$/../../starling/samples/demo_mobile/src" />
+          <root url="file://$MODULE_DIR$/../../starling/samples/scaffold_mobile/src" />
+          <root url="file://$MODULE_DIR$/../../starling/starling/src" />
+          <root url="file://$MODULE_DIR$/../../starling/tests/src" />
         </SOURCES>
-        <jarDirectory url="file://$MODULE_DIR$/../../../../../../starling/starling/bin" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../starling/starling/bin" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library type="flex">
+        <properties id="fa7e6db7-6486-491e-af20-048b5abd435e" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
       </library>
     </orderEntry>
   </component>

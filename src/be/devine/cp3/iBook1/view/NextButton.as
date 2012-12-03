@@ -10,6 +10,7 @@ public class NextButton extends IconButton
     override protected function createIcon():void
     {
         //icon = new Library.ArrowNextGif();
+        //var prevbtn:BasisPrevButton;
     }
 }
 }
