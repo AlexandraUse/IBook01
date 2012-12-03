@@ -30,6 +30,7 @@ public class PageService extends EventDispatcher{
     private function pagesXMLLoaderCompleteHandler(event:Event):void
     {
         var pagesXML:XML = new XML(event.target.data);
+        var pages:Array = [];
         for each(var page:Object in pagesXML.page)
         {
             var pageVO:PageVO = new PageVO();
@@ -40,7 +41,6 @@ public class PageService extends EventDispatcher{
         }
         this.pages = pages;
         dispatchEvent(new Event(Event.COMPLETE));
-        //this.currentPage = pages[0];
 
     }
 }
