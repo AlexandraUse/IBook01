@@ -7,6 +7,8 @@ import be.devine.cp3.iBook1.view.PageSelector;
 import be.devine.cp3.iBook1.view.TextLoader;
 
 import flash.events.Event;
+
+import starling.display.DisplayObject;
 import starling.display.Sprite;
 
 public class Application extends starling.display.Sprite
@@ -17,6 +19,9 @@ public class Application extends starling.display.Sprite
     private var pageSelector:PageSelector;
     private var selectedImage:ImageLoader;
     private var selectedText:TextLoader;
+    private var selectedTitle:TextLoader;
+
+    private var magazineContainer:Sprite;
 
     public function Application()
     {
@@ -29,6 +34,9 @@ public class Application extends starling.display.Sprite
 
         selectedText = new TextLoader();
         addChild(selectedText);
+
+        selectedTitle = new TextLoader();
+        addChild(selectedTitle);
 
         pageSelector = new PageSelector();
         addChild(pageSelector);
@@ -59,8 +67,17 @@ public class Application extends starling.display.Sprite
         {
             //De data van de pagina inladen
             selectedImage.load(appModel.currentPage.image);
-            selectedText.loadTitle(appModel.currentPage.title);
+            selectedTitle.loadTitle(appModel.currentPage.title);
             selectedText.loadText(appModel.currentPage.text);
+
+
+            magazineContainer = new Sprite();
+            magazineContainer.addChild(selectedImage);
+            magazineContainer.addChild(selectedTitle);
+            magazineContainer.addChild(selectedText);
+            magazineContainer.x = 258;
+            magazineContainer.y = 20;
+            addChild(magazineContainer);
         }
         else
         {

@@ -5,5 +5,6 @@ public class TextVo
     public var x:String;
     public var y:String;
     public var text:String;
+    public var fontSize:uint;
 }
 }

@@ -8,6 +8,7 @@ public class PageSelector extends Sprite
 {
     private var appModel:AppModel;
 
+    private var arrowContainer:Sprite;
     private var nextButton:NextButton;
     private var prevButton:PrevButton;
 
@@ -16,10 +17,17 @@ public class PageSelector extends Sprite
         this.appModel = AppModel.getInstance();
 
         nextButton = new NextButton();
-        addChild(nextButton);
+        //addChild(nextButton);
 
         prevButton = new PrevButton();
-        addChild(prevButton);
+        //addChild(prevButton);
+
+        arrowContainer = new Sprite();
+        arrowContainer.addChild(nextButton);
+        arrowContainer.addChild(prevButton);
+        arrowContainer.x = 205;
+        arrowContainer.y = 205;
+        addChild(arrowContainer);
 
         nextButton.addEventListener(Event.TRIGGERED, nextClickHandler);
         prevButton.addEventListener(Event.TRIGGERED, prevClickHandler);

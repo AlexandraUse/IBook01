@@ -20,7 +20,7 @@ public class PageInfo extends Sprite
     {
         this.appModel = AppModel.getInstance();
 
-        title = new TextField();
+        /*title = new TextField();
         title.autoSize = TextFieldAutoSize.LEFT;
         title.defaultTextFormat = new TextFormat("Arial", 11, 0xacb098);
         title.multiline = false;
@@ -38,7 +38,7 @@ public class PageInfo extends Sprite
         text.embedFonts = true;
         text.y = title.height + 20;
         text.x = 10;
-        addChild(text);
+        addChild(text);*/
     }
 }
 }

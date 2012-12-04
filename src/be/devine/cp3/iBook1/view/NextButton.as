@@ -20,8 +20,7 @@ public class NextButton extends Sprite
     {
         var nextButton = new Button(Texture.fromBitmap(new NextButtonImage()));
         addChild(nextButton);
-        nextButton.x = 460;
-        nextButton.y = 200;
+        nextButton.x = 545;
     }
 }
 }

@@ -13,8 +13,6 @@ public class PrevButton extends Sprite
     {
         var prevButton = new Button(Texture.fromBitmap(new PrevButtonImage()));
         addChild(prevButton);
-        prevButton.x = 20;
-        prevButton.y = 200;
     }
 }
 }
