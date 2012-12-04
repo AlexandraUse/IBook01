@@ -1,10 +1,13 @@
 package be.devine.cp3.iBook1.vo
 {
-public class TextVo
+public class TextVO extends ElementVO
 {
-    public var x:String;
-    public var y:String;
     public var text:String;
-    public var fontSize:uint;
+    public var title:String;
+
+    public function TextVO()
+    {
+
+    }
 }
 }

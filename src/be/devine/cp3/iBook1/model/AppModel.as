@@ -1,10 +1,9 @@
 package be.devine.cp3.iBook1.model
 {
 import be.devine.cp3.iBook1.vo.PageVO;
+
 import flash.events.Event;
 import flash.events.EventDispatcher;
-import flash.net.URLLoader;
-import flash.net.URLRequest;
 
 public class AppModel extends EventDispatcher
 {

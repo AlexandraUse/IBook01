@@ -1,9 +1,12 @@
 package be.devine.cp3.iBook1.vo
 {
-public class UrlVo
+public class UrlVO extends ElementVO
 {
-    public var x:String;
-    public var y:String;
-    public var url:String;
+    public var link:String;
+
+    public function UrlVO()
+    {
+
+    }
 }
 }
