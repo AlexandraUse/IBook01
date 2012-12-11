@@ -15,6 +15,7 @@ import starling.core.Starling;
 public class Main extends Sprite
 {
     private var starling:Starling;
+    private var f:FontContainer;
 
     public function Main()
     {

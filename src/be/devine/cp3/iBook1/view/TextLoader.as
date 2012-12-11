@@ -17,27 +17,30 @@ public class TextLoader extends Element
     {
         super(textVO);
 
-        loadTitle(textVO.title);
-        loadText(textVO.text);
-    }
-
-    private function loadTitle(title:String)
-    {
-        titleTextField = new starling.text.TextField(180, 20, title, "Arial Narrow", 14, Color.GRAY);
-        titleTextField.hAlign = HAlign.LEFT;
+        titleTextField = TextFieldFactory.createTextField({
+            width: 180,
+            height: 20,
+            text: textVO.title,
+            fontSize:14,
+            hAlign: HAlign.LEFT,
+            vAlign: VAlign.BOTTOM,
+            color: Color.GRAY
+        });
         titleTextField.y = 212;
         titleTextField.x = 40;
-        //titleTextField.vAlign = VAlign.BOTTOM;
         addChild(titleTextField);
-    }
 
-    private function loadText(text:String)
-    {
-        textTextField= new starling.text.TextField(215, 360, text, "Arial Narrow", 12, Color.BLACK);
-        textTextField.hAlign = HAlign.LEFT;
+        textTextField = TextFieldFactory.createTextField({
+            width: 215,
+            height: 360,
+            text: textVO.text,
+            fontSize: 12,
+            hAlign: HAlign.LEFT,
+            vAlign: VAlign.TOP,
+            color: Color.BLACK
+        });
         textTextField.y = 45;
         textTextField.x = 230;
-        textTextField.vAlign = VAlign.TOP;
         addChild(textTextField);
     }
 }
