@@ -1,9 +1,15 @@
 package be.devine.cp3.iBook1.vo
 {
-public class PageVO
+import be.devine.cp3.iBook1.factory.view.ElementFactory;
+
+public class PageVO extends ElementFactory
 {
-    public var text:String;
-    public var title:String;
-    public var image:String;
+
+    public var elements:Vector.<ElementVO>;
+
+    public function PageVO()
+    {
+        elements = new Vector.<ElementVO>();
+    }
 }
 }

@@ -92,5 +92,4 @@ public class AppModel extends EventDispatcher
     }
 }
 }
-
 internal class Enforcer{};

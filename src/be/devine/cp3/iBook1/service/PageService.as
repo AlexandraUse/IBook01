@@ -15,8 +15,8 @@ import flash.events.EventDispatcher;
 import flash.net.URLLoader;
 import flash.net.URLRequest;
 
-public class PageService extends EventDispatcher{
-
+public class PageService extends EventDispatcher
+{
     public var pages:Array;
 
     public function PageService()
@@ -41,7 +41,6 @@ public class PageService extends EventDispatcher{
         }
         this.pages = pages;
         dispatchEvent(new Event(Event.COMPLETE));
-
     }
 }
 }

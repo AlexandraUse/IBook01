@@ -9,9 +9,11 @@ package be.devine.cp3.iBook1.factory.view {
 import be.devine.cp3.iBook1.view.Element;
 import be.devine.cp3.iBook1.view.ImageLoader;
 import be.devine.cp3.iBook1.view.TextLoader;
+import be.devine.cp3.iBook1.view.UrlLoader;
 import be.devine.cp3.iBook1.vo.ElementVO;
 import be.devine.cp3.iBook1.vo.ImageVO;
 import be.devine.cp3.iBook1.vo.TextVO;
+import be.devine.cp3.iBook1.vo.UrlVO;
 
 public class ElementFactory {
 
@@ -24,6 +26,11 @@ public class ElementFactory {
         if(elementVO is TextVO)
         {
             return new TextLoader(elementVO as TextVO);
+        }
+
+        if(elementVO is UrlVO)
+        {
+            return new UrlLoader(elementVO as UrlVO);
         }
 
         return new Element(elementVO);

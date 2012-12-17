@@ -18,7 +18,7 @@ public class Application extends starling.display.Sprite
     public function Application()
     {
         appModel = AppModel.getInstance();
-
+        pageSelector = new PageSelector();
         pageService = new PageService();
         pageService.addEventListener(Event.COMPLETE, pagesCompleteHandler);
         pageService.load();
@@ -27,10 +27,7 @@ public class Application extends starling.display.Sprite
     private function pagesCompleteHandler(event:Event):void
     {
         appModel.pages = pageService.pages;
-
-        pageSelector = new PageSelector();
         addChild(pageSelector);
-
         appModel.currentPage = appModel.pages[0];
     }
 }

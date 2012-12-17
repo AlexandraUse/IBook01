@@ -14,6 +14,10 @@ public class ImageLoader extends Element
 {
     private var ldr:Loader;
     private var image:Image;
+    private var _thumbnails:Boolean = false;
+
+    private var _maxWidth:Number = 0;
+    private var _maxHeight:Number = 0;
 
     public function ImageLoader(imageVO:ImageVO)
     {
@@ -30,7 +34,80 @@ public class ImageLoader extends Element
         image = new Image(texture);
         image.y = 30;
         image.x = 35;
+        if(_thumbnails)
+        {
+            display();
+        }
         addChild(image);
+    }
+
+    private function display():void
+    {
+        if(image)
+        {
+            image.width = _maxWidth;
+            image.scaleY = image.scaleX;
+            if(image.height > _maxHeight)
+            {
+                image.height = _maxHeight;
+                image.scaleX = image.scaleY;
+            }
+
+            image.width = Math.round(image.width);
+            image.height = Math.round(image.height);
+
+            image.x = Math.round((_maxWidth - image.width) * .5);
+            image.y = Math.round((_maxHeight - image.height) *.5);
+        }
+    }
+
+    public function setMaxSize(maxWidth:Number, maxHeight:Number):void
+    {
+        _maxWidth = maxWidth;
+        _maxHeight = maxHeight;
+        display();
+    }
+
+    public function get maxWidth():Number
+    {
+        return _maxWidth;
+    }
+
+    public function set maxWidth(value:Number):void
+    {
+        if(_maxWidth != value)
+        {
+            _maxWidth = value;
+            display();
+        }
+    }
+
+    public function get maxHeight():Number
+    {
+        return _maxHeight;
+    }
+
+    public function set maxHeight(value:Number):void
+    {
+        if(_maxHeight != value)
+        {
+            _maxHeight = value;
+            display();
+        }
+    }
+
+    public function get thumbnails():Boolean
+    {
+        return _thumbnails;
+    }
+
+    public function set thumbnails(value:Boolean):void
+    {
+        _thumbnails = value;
+        if(value != _thumbnails)
+        {
+            display();
+        }
     }
 }
 }
