@@ -3,15 +3,10 @@ package be.devine.cp3.iBook1.view
 import be.devine.cp3.iBook1.vo.ElementVO;
 import be.devine.cp3.iBook1.vo.ImageVO;
 import be.devine.cp3.iBook1.vo.PageVO;
-
 import flash.display.Bitmap;
-
 import flash.display.BitmapData;
-
 import flash.display.Shape;
-
 import starling.display.Image;
-
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.events.Touch;
@@ -34,11 +29,8 @@ public class Thumbnail extends starling.display.Sprite
         this._pageVO = pageVO;
         this.w = w;
         this.h = h;
-
         this.useHandCursor = true;
-
         load();
-
         border = new Shape();
         addEventListener(TouchEvent.TOUCH, clickHandler);
     }

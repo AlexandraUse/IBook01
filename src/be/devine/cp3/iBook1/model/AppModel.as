@@ -21,7 +21,6 @@ public class AppModel extends EventDispatcher
 
     private var _pages:Array;
     private var _currentPage:PageVO;
-
     private var currentPageChanged:Boolean;
     private var _currentPageIndex:int;
 
@@ -33,10 +32,6 @@ public class AppModel extends EventDispatcher
         }
 
         _pages = [];
-    }
-
-    private function commitProperties():void
-    {
     }
 
     public function goToNextPage():void
@@ -86,10 +81,21 @@ public class AppModel extends EventDispatcher
         {
             currentPageChanged = true;
             _currentPage = value;
-            commitProperties();
+            currentPageIndex = pages.indexOf(_currentPage);
             dispatchEvent(new Event(CURRENT_PAGE_CHANGED));
         }
     }
+
+    public function get currentPageIndex():int
+    {
+        return _currentPageIndex;
+    }
+
+    public function set currentPageIndex(value:int):void
+    {
+        _currentPageIndex = value;
+    }
 }
 }
+
 internal class Enforcer{};

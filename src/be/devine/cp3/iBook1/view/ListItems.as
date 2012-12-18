@@ -1,31 +1,25 @@
-package be.devine.cp3.iBook1.view {
-import be.devine.cp3.iBook1.factory.view.TextFieldFactory;
+package be.devine.cp3.iBook1.view
+{
+import be.devine.cp3.iBook1.model.AppModel;
 import be.devine.cp3.iBook1.vo.ElementVO;
 import be.devine.cp3.iBook1.vo.PageVO;
 import be.devine.cp3.iBook1.vo.TextVO;
-
-import starling.display.Image;
-
 import starling.display.Sprite;
 import starling.events.Touch;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
-import starling.utils.Color;
 
 public class ListItems extends starling.display.Sprite
 {
     private var _pageVO:PageVO;
     private var _selected:Boolean;
-    private var listItem:TextLoader;
+    private var listItem:ListLoader;
 
     public function ListItems(pageVO:PageVO)
     {
         this._pageVO = pageVO;
-
         this.useHandCursor = true;
-
         load();
-
         this.addEventListener(TouchEvent.TOUCH, clickHandler);
     }
 
@@ -33,8 +27,9 @@ public class ListItems extends starling.display.Sprite
     {
         for each(var elementVO:ElementVO in _pageVO.elements)
         {
-            listItem = new TextLoader(_pageVO.elements[0] as TextVO);
-            listItem.y = -137;
+            listItem = new ListLoader(_pageVO.elements[0] as TextVO);
+            listItem.y = -187;
+            listItem.x = - 20;
             addChild(listItem);
         }
     }
@@ -75,11 +70,12 @@ public class ListItems extends starling.display.Sprite
 
     private function display():void
     {
-
+        listItem.listItem = false;
         if(_selected)
         {
             listItem.listItem = true;
         }
+
     }
 }
 }

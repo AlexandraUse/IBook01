@@ -1,19 +1,17 @@
-package be.devine.cp3.iBook1.factory.view {
+package be.devine.cp3.iBook1.factory.view
+{
 import flash.text.Font;
-
 import starling.text.TextField;
 
 public class TextFieldFactory
 {
-    [Embed(source="/assets/fonts/ArialNarrow.ttf", embedAsCFF="false", mimeType = "application/x-font", fontWeight="normal", fontStyle="normal", advancedAntiAliasing="false", fontName="Arial Narrow")]
-    private static const ArialNarrow:Class;
-    private static const arialNarrow:Font = new ArialNarrow();
-
+    [Embed(source="/assets/fonts/Helvetica.dfont", embedAsCFF="false", mimeType = "application/x-font", fontWeight="normal", fontStyle="normal", advancedAntiAliasing="false", fontName="Helvetica")]
+    private static const Helvetica:Class;
+    private static const helvetica:Font = new Helvetica();
 
     public static function createTextField(config:Object):TextField
     {
-
-        var t:TextField = new TextField(config.width, config.height, config.text, arialNarrow.fontName, config.fontSize, config.vAlign, config.color);
+        var t:TextField = new TextField(config.width, config.height, config.text, helvetica.fontName, config.fontSize, config.vAlign, config.color);
 
         if(config.fontName != null)
             t.fontName = config.fontName;

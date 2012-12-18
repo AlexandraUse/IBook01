@@ -1,6 +1,7 @@
 package be.devine.cp3.iBook1.view
 {
 import be.devine.cp3.iBook1.factory.view.TextFieldFactory;
+import be.devine.cp3.iBook1.model.AppModel;
 import be.devine.cp3.iBook1.vo.TextVO;
 
 import starling.text.TextField;
@@ -10,25 +11,17 @@ import starling.utils.VAlign;
 
 public class TextLoader extends Element
 {
+    private var appModel:AppModel;
+
     private var titleTextField:starling.text.TextField;
     private var textTextField:starling.text.TextField;
-
-    private var _listItem:Boolean = false;
-    private var kleur:uint;
-
     private var _textVO:TextVO;
 
     public function TextLoader(textVO:TextVO)
     {
         super(textVO);
-
+        this.appModel = AppModel.getInstance();
         this._textVO = textVO;
-
-        /*if(_listItem = true){
-            kleur = Color.BLACK;
-        }else{
-            kleur = Color.GRAY;
-        }*/
 
         titleTextField = TextFieldFactory.createTextField({
             width: 180,
@@ -52,23 +45,9 @@ public class TextLoader extends Element
             vAlign: VAlign.TOP,
             color: Color.BLACK,
             x: 230,
-            y: 45
+            y: 25
         });
         addChild(textTextField);
-    }
-
-    public function get listItem():Boolean
-    {
-        return _listItem;
-    }
-
-    public function set listItem(value:Boolean):void
-    {
-        _listItem = value;
-        if(value != _listItem)
-        {
-
-        }
     }
 }
 }

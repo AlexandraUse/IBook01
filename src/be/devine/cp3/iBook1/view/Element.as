@@ -1,11 +1,5 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Lexii
- * Date: 4/12/12
- * Time: 14:16
- * To change this template use File | Settings | File Templates.
- */
-package be.devine.cp3.iBook1.view {
+package be.devine.cp3.iBook1.view
+{
 import be.devine.cp3.iBook1.vo.ElementVO;
 
 import starling.display.Sprite;

@@ -1,8 +1,6 @@
 package be.devine.cp3.iBook1.view
 {
-
 import starling.display.Button;
-
 import starling.display.Sprite;
 import starling.textures.Texture;
 
