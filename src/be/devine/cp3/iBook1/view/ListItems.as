@@ -1,56 +1,41 @@
-package be.devine.cp3.iBook1.view
-{
+package be.devine.cp3.iBook1.view {
+import be.devine.cp3.iBook1.factory.view.TextFieldFactory;
 import be.devine.cp3.iBook1.vo.ElementVO;
-import be.devine.cp3.iBook1.vo.ImageVO;
 import be.devine.cp3.iBook1.vo.PageVO;
-
-import flash.display.Bitmap;
-
-import flash.display.BitmapData;
-
-import flash.display.Shape;
+import be.devine.cp3.iBook1.vo.TextVO;
 
 import starling.display.Image;
 
 import starling.display.Sprite;
-import starling.events.Event;
 import starling.events.Touch;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
+import starling.utils.Color;
 
-public class Thumbnail extends starling.display.Sprite
+public class ListItems extends starling.display.Sprite
 {
     private var _pageVO:PageVO;
     private var _selected:Boolean;
-    private var image:ImageLoader;
-    private var border:Shape;
-    private var bmpShape:Image;
+    private var listItem:TextLoader;
 
-    private var w:uint;
-    private var h:uint;
-
-    public function Thumbnail(pageVO:PageVO, w:uint,  h:uint)
+    public function ListItems(pageVO:PageVO)
     {
         this._pageVO = pageVO;
-        this.w = w;
-        this.h = h;
 
         this.useHandCursor = true;
 
         load();
 
-        border = new Shape();
-        addEventListener(TouchEvent.TOUCH, clickHandler);
+        this.addEventListener(TouchEvent.TOUCH, clickHandler);
     }
 
     public function load():void
     {
         for each(var elementVO:ElementVO in _pageVO.elements)
         {
-            image = new ImageLoader(_pageVO.elements[2] as ImageVO);
-            image.setMaxSize(w, h);
-            image.thumbnails = true;
-            addChild(image);
+            listItem = new TextLoader(_pageVO.elements[0] as TextVO);
+            listItem.y = -137;
+            addChild(listItem);
         }
     }
 
@@ -90,21 +75,10 @@ public class Thumbnail extends starling.display.Sprite
 
     private function display():void
     {
-        if(bmpShape)
-        {
-            removeChild(bmpShape);
-        }
 
-        border.graphics.clear();
         if(_selected)
         {
-            border.graphics.lineStyle(3, 0xffffff, 1, true);
-            border.graphics.drawRect(1, 2, w-2, h-4);
-            border.graphics.endFill();
-            var bmpShapeData:BitmapData = new BitmapData(100, 100, true, 0);
-            bmpShapeData.draw(border);
-            bmpShape = Image.fromBitmap(new Bitmap(bmpShapeData, "auto", true));
-            addChild(bmpShape);
+            listItem.listItem = true;
         }
     }
 }

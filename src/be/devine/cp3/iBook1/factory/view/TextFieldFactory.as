@@ -13,7 +13,7 @@ public class TextFieldFactory
     public static function createTextField(config:Object):TextField
     {
 
-        var t:TextField = new TextField(config.width, config.height, config.text, arialNarrow.fontName);
+        var t:TextField = new TextField(config.width, config.height, config.text, arialNarrow.fontName, config.fontSize, config.vAlign, config.color);
 
         if(config.fontName != null)
             t.fontName = config.fontName;

@@ -13,9 +13,22 @@ public class TextLoader extends Element
     private var titleTextField:starling.text.TextField;
     private var textTextField:starling.text.TextField;
 
+    private var _listItem:Boolean = false;
+    private var kleur:uint;
+
+    private var _textVO:TextVO;
+
     public function TextLoader(textVO:TextVO)
     {
         super(textVO);
+
+        this._textVO = textVO;
+
+        /*if(_listItem = true){
+            kleur = Color.BLACK;
+        }else{
+            kleur = Color.GRAY;
+        }*/
 
         titleTextField = TextFieldFactory.createTextField({
             width: 180,
@@ -24,10 +37,10 @@ public class TextLoader extends Element
             fontSize:14,
             hAlign: HAlign.LEFT,
             vAlign: VAlign.BOTTOM,
-            color: Color.GRAY
+            color: Color.GRAY,
+            x: 40,
+            y: 212
         });
-        titleTextField.y = 212;
-        titleTextField.x = 40;
         addChild(titleTextField);
 
         textTextField = TextFieldFactory.createTextField({
@@ -37,11 +50,25 @@ public class TextLoader extends Element
             fontSize: 12,
             hAlign: HAlign.LEFT,
             vAlign: VAlign.TOP,
-            color: Color.BLACK
+            color: Color.BLACK,
+            x: 230,
+            y: 45
         });
-        textTextField.y = 45;
-        textTextField.x = 230;
         addChild(textTextField);
+    }
+
+    public function get listItem():Boolean
+    {
+        return _listItem;
+    }
+
+    public function set listItem(value:Boolean):void
+    {
+        _listItem = value;
+        if(value != _listItem)
+        {
+
+        }
     }
 }
 }

@@ -9,6 +9,7 @@ package be.devine.cp3.iBook1.factory.vo {
 import be.devine.cp3.iBook1.vo.ElementVO;
 import be.devine.cp3.iBook1.vo.ImageVO;
 import be.devine.cp3.iBook1.vo.TextVO;
+import be.devine.cp3.iBook1.vo.UrlVO;
 
 public class ElementVOFactory {
 
@@ -19,6 +20,7 @@ public class ElementVOFactory {
             case "image": return createImageVO(elementXML);
             case "text": return createTextVO(elementXML);
             case "title": return createTitleVO(elementXML);
+            case "link": return createUrlVO(elementXML);
         }
         return null;
     }
@@ -41,6 +43,13 @@ public class ElementVOFactory {
     {
         var elementVO:TextVO = new TextVO();
         elementVO.title = elementXML;
+        return elementVO;
+    }
+
+    public static function createUrlVO(elementXML:XML):UrlVO
+    {
+        var elementVO:UrlVO = new UrlVO();
+        elementVO.link = elementXML;
         return elementVO;
     }
 }
