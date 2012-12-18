@@ -14,6 +14,10 @@ public class ImageLoader extends Element
 {
     private var ldr:Loader;
     private var image:Image;
+    private var _thumbnails:Boolean = false;
+
+    private var _maxWidth:Number = 0;
+    private var _maxHeight:Number = 0;
 
     private var _thumbnails:Boolean = false;
 

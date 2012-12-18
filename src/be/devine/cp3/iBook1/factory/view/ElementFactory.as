@@ -32,6 +32,11 @@ public class ElementFactory {
             return new UrlLoader(elementVO as UrlVO);
         }
 
+        if(elementVO is UrlVO)
+        {
+            return new UrlLoader(elementVO as UrlVO);
+        }
+
         return new Element(elementVO);
     }
 }
