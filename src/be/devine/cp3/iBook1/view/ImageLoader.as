@@ -19,11 +19,6 @@ public class ImageLoader extends Element
     private var _maxWidth:Number = 0;
     private var _maxHeight:Number = 0;
 
-    private var _thumbnails:Boolean = false;
-
-    private var _maxWidth:Number = 0;
-    private var _maxHeight:Number = 0;
-
     public function ImageLoader(imageVO:ImageVO)
     {
         super(imageVO);

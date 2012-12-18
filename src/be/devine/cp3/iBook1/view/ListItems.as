@@ -16,7 +16,7 @@ public class ListItems extends starling.display.Sprite
 {
     private var _pageVO:PageVO;
     private var _selected:Boolean;
-    private var listItem:TextLoader;
+    private var listItem:ListLoader;
 
     public function ListItems(pageVO:PageVO)
     {
@@ -33,8 +33,7 @@ public class ListItems extends starling.display.Sprite
     {
         for each(var elementVO:ElementVO in _pageVO.elements)
         {
-            listItem = new TextLoader(_pageVO.elements[0] as TextVO);
-            listItem.y = -137;
+            listItem = new ListLoader(_pageVO.elements[0] as TextVO);
             addChild(listItem);
         }
     }
@@ -75,10 +74,11 @@ public class ListItems extends starling.display.Sprite
 
     private function display():void
     {
+        listItem.selectedListItem = false;
 
         if(_selected)
         {
-            listItem.listItem = true;
+            listItem.selectedListItem = true;
         }
     }
 }

@@ -153,7 +153,8 @@ public class PageSelector extends Sprite
 
     private function listItemSelectHandler(e:starling.events.Event):void
     {
-        appModel.currentPage = (e.target as ListItems).pageVO;
+        var selectedListItem = (e.target as ListItems).pageVO;
+        appModel.currentPage = selectedListItem;
     }
 
     private function createThumbnails():void
