@@ -30,10 +30,10 @@ public class UrlLoader extends Element
             fontSize:14,
             hAlign: HAlign.LEFT,
             vAlign: VAlign.BOTTOM,
-            color: Color.GRAY
+            color: Color.GRAY,
+            x: 40,
+            y: 242
         });
-        urlTextField.y = 242;
-        urlTextField.x = 40;
         addChild(urlTextField);
         urlTextField.addEventListener(starling.events.TouchEvent.TOUCH, clickHandler);
     }

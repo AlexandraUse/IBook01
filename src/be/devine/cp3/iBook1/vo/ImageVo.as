@@ -1,4 +1,4 @@
-package be.devine.cp3.iBook1.vo
+ package be.devine.cp3.iBook1.vo
 {
 public class ImageVO extends ElementVO
 {
