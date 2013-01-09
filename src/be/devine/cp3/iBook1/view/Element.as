@@ -10,6 +10,7 @@ public class Element extends Sprite
 
     public function Element(elementVO:ElementVO)
     {
+        trace('ok');
         _elementVO = elementVO;
     }
 }
